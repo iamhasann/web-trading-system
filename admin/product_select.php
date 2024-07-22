@@ -27,8 +27,6 @@
                 
             </tr>
  
- 
- 
             <?php
                 try{
                     $sql_select= $conn->prepare("SELECT *  
@@ -39,22 +37,23 @@
                     while($row_select = $sql_select->fetch(PDO::FETCH_ASSOC)){
                         //$row_select = จะเก็บข้อมูลที่ while วนเเต่ละรอบ
             ?>
-            <tr>
-                <td><?php echo $row_select['product_id'];  ?></td>
-                <td><?php echo $row_select['product_name']; ?></td> 
-                <td><?php echo $row_select['product_type_name']; ?></td> 
-                <td><?php echo $row_select['product_color']; ?></td>
-                <td><?php echo $row_select['product_dealer']; ?></td>
-                <td><?php echo $row_select['product_price']; ?></td>
-                <td><?php echo $row_select['product_age']; ?></td>
-                <td><img src="img/<?php echo $row_select['product_img']; ?>"  style="width:120px" ></td>
-                <td><a href="product_form_update.php?update_id=<?php echo $row_select['product_id'];  ?>"  
-                onclick="return confirm('คุณเเน่ใจที่จะเเก้ไขข้อมูลใช่หรือไม่ ?');" > เเก้ไข </a></td> 
- 
-                <td><a href="product_delete.php?del_id=<?php echo $row_select['product_id']; ?>"
-                onclick="return confirm('คุณเเน่ใจที่จะลบข้อมูลใช่หรือไม่ ?');">ลบ </a></td>  
-            </tr>
-                <?php 
+                <tr>
+                    <td><?php echo $row_select['product_id'];  ?></td>
+                    <td><?php echo $row_select['product_name']; ?></td> 
+                    <td><?php echo $row_select['product_type_name']; ?></td> 
+                    <td><?php echo $row_select['product_color']; ?></td>
+                    <td><?php echo $row_select['product_dealer']; ?></td>
+                    <td><?php echo $row_select['product_price']; ?></td>
+                    <td><?php echo $row_select['product_age']; ?></td>
+                    <td><img src="img/<?php echo $row_select['product_img']; ?>"  style="width:120px" ></td>
+                    
+                    <td><a href="product_form_update.php?update_id=<?php echo $row_select['product_id'];  ?>"  
+                    onclick="return confirm('คุณเเน่ใจที่จะเเก้ไขข้อมูลใช่หรือไม่ ?');" > เเก้ไข </a></td> 
+    
+                    <td><a href="product_delete.php?del_id=<?php echo $row_select['product_id']; ?>"
+                    onclick="return confirm('คุณเเน่ใจที่จะลบข้อมูลใช่หรือไม่ ?');">ลบ </a></td>  
+                </tr>
+            <?php 
                 }
                     }
                     catch(PDOException $e) {
@@ -62,7 +61,7 @@
                         }
                 $conn = null;//เคลีย์ค่าในการดึงข้อมูล
  
-                ?>
+            ?>
             
         </table>
         </center>

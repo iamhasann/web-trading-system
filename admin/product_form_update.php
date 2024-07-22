@@ -4,9 +4,8 @@ $get_update_id=$_REQUEST['update_id'];
  try{
     $sql_select= $conn->prepare("SELECT * FROM product_tb where product_id='$get_update_id'");//การเขียนคำสั่ง SQL
     $sql_select->execute();//สั่งให้ sql_select ทำงาน
-    $row_select = $sql_select->fetch(PDO::FETCH_ASSOC);      
- 
- 
+    $row_select = $sql_select->fetch(PDO::FETCH_ASSOC);
+    
     }
     catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
